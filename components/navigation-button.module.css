@@ -1,11 +1,7 @@
 .navButton {
    position: relative;
-    color: var(--c-text-color);
     padding: 10px;
-    border-radius: 99px;
-    display: flex;
-    align-items: center;
-    transition: var(--fade);
+   
 }
  
 svg {
@@ -17,10 +13,6 @@ svg + h2 {
   margin-right: 15px
 }
 
-.navButton:hover{
-  color: var(--c-theme);
- background-color: var(--c-theme-20);
-}
 
 .navButtonSelected {
   color: var(--c-theme);
