@@ -1,11 +1,16 @@
 import React from "react"
 
-import cn from 'classnames'
+import cn from "classnames"
 
-import styles from './stack.module.css'
+import styles from "../components/stack.module.css"
 
-function Stack({ gap=10, column=false, chidlren}) {
-    return <div className={cn([styles.stack, column && styles.column])}>{chidlren}</div>
+function Stack({  column = false, child }) {
+    return (
+    <div className={cn([styles.stack, column && styles.column])}
+   
+    >{child}
+    </div>
+    )
 }
 
-export default Stack;
+export default Stack
