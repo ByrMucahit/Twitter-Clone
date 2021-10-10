@@ -13,12 +13,13 @@ export default {
 
 export const Normal = () => <Button>Save</Button>
 
-export const Theme = () => <Stack column>
+
+export const Theme = () => <div>
   <ThemeButton>Save</ThemeButton>
   <ThemeButton full>Save Full</ThemeButton>
   <ThemeButton full big>Save Big Button</ThemeButton>
-  </Stack>
- 
+  </div>
+
 export const NavButton = () => <NavigationButton>
 
 <Home />
