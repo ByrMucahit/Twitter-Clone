@@ -1,0 +1,18 @@
+.layout{
+ display: grid; /* divided into two pieces*/   
+ grid-template-columns: 230px 1fr; /* Left side is 230 px , right  side can extended as much as it can*/
+ background-color: #333;
+ min-height: 100vh;
+}
+
+@media screen and (min-width: 980px) {
+    .layout{
+        display: grid; /* divided into three pieces*/   
+        grid-template-columns: 230px 1fr 230px; /* Left side is 230 px , middle side can extended as much as it can, right side 230 px*/
+        background-color: #333;
+        min-height: 100vh;
+        margin-left: auto;
+        margin-right: auto;
+       }
+       
+}
