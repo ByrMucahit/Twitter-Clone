@@ -1,7 +1,7 @@
 import React from 'react'
+import styles from './navigation.module.css'
 
 import NavButton from './navigation-button'
-import styles from './navigation.module.css'
 import TextTitle from './text-title'
 import { 
     Twitter, 
@@ -15,52 +15,84 @@ import {
     More
  } from './icons'
 
+
+ const MENU = [
+    {
+        key: 'twitter',
+        icon: <Twitter />,
+        title: '',
+        notify: 0
+    },
+     {
+         key: 'home',
+         icon: <Home />,
+         title: 'Home',
+         notify: 0
+     },
+     {
+        key: 'explore',
+        icon: <Explore />,
+        title: 'Explore',
+        notify: 0
+    },
+    {
+        key: 'notification',
+        icon: <Notification/>,
+        title: 'Notification',
+        notify: 17
+    },
+    {
+        key: 'message',
+        icon: <Message/>,
+        title: 'Message',
+        notify: 0
+    },
+    {
+        key: 'bookmark',
+        icon: <Bookmark/>,
+        title: 'Bookmark',
+        notify: 0
+    },
+    {
+        key: 'list',
+        icon:<Lists/>,
+        title: 'Lists',
+        notify: 0
+    },
+    {
+        key: 'profile',
+        icon: <Profile/>,
+        title: 'Profile',
+        notify: 0
+    },
+    {
+        key:'more',
+        icon: <More/>,
+        title: 'More',
+        notify: 0
+    }
+    
+ ]
+
 function Navigation({flat=false, selectedKey}) {
-    return <nav className={styles.nav}>
-        <NavButton>
-            <Twitter/>
-        </NavButton>
+    return (
+    <nav className={styles.nav}> 
+        { MENU.map((menu) => {
+            const showTitle = !flat && menu.title.length > 0
+                return(
+                <NavButton 
+                key={menu.key}
+                notify={menu.notify }
+                selected={selectedKey ===  menu.key }
+                >
+                         {menu.icon}
+                   {showTitle > 0 && <TextTitle>{menu.title}</TextTitle> }     
+                </NavButton>
 
-        <NavButton selected={selectedKey === 'home'}>
-            <Home />
-            <TextTitle>Home</TextTitle>
-        </NavButton>
-
-        <NavButton selected={selectedKey === 'explorer'}>
-            <Explore />
-            <TextTitle>Explore</TextTitle>
-        </NavButton>
-
-        <NavButton notify={17} selected={selectedKey === 'notification'}>
-            <Notification />
-            <TextTitle>Notification</TextTitle>
-        </NavButton>
-
-        <NavButton selected={selectedKey === 'messages'}>
-            <Message />
-            <TextTitle>Message</TextTitle>
-        </NavButton>
-
-        <NavButton selected={selectedKey === 'bookmark'}>
-            <Bookmark />
-            <TextTitle>Bookmark</TextTitle>
-        </NavButton>
-
-        <NavButton selected={selectedKey === 'lists'}>
-            <Lists />
-            <TextTitle>List</TextTitle>
-        </NavButton>
-
-        <NavButton selected={selectedKey === 'profile'}>
-            <Profile />
-            <TextTitle>Profile</TextTitle>
-        </NavButton>
-
-        <NavButton selected={selectedKey === 'more'}>
-            <More />
-            <TextTitle>More</TextTitle>
-        </NavButton>
+                )
+                })}
     </nav>
+    )
 }
 
 export default Navigation;
