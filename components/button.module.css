@@ -7,14 +7,14 @@
     align-items: center;
     justify-content: center;
     transition: var(--fade);
+    text-decoration: none;
 }
 
 .button:hover{
     color: var(--c-theme);
-   background-color: var(--c-theme-20);
+   background-color: var(--c-theme-10);
   }
   
-
 .fullWidth {
 width: 100% !important;
 }

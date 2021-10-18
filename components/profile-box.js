@@ -12,7 +12,6 @@ function ProfileBox({flat=false,name = "Mücahit",slug = "@byr_mucahit"}) {
     return (
         <Button className={cn([styles.box])}>
             <Photo size={39}/>
-            
             {!flat && (
                 <>
                      <div className={styles.body}>
@@ -21,12 +20,8 @@ function ProfileBox({flat=false,name = "Mücahit",slug = "@byr_mucahit"}) {
                      </div>
                             <More className={styles.icon}/>
                 </>
-            )
-
-            }
-           
+            )}
         </Button>
-    )
-}
+    )}
 
 export default ProfileBox;
