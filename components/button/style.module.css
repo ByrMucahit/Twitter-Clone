@@ -1,20 +1,28 @@
 .button {
     cursor: pointer;
     background: transparent;
-    color: white;
+    color: var(--c-text-color);
     border-radius: 99px;
     display: flex;
     align-items: center;
     justify-content: center;
     transition: var(--fade);
     text-decoration: none;
-}
+  
+    
+  }
 
-.button:hover{
+  .button:hover {
     color: var(--c-theme);
-   background-color: var(--c-theme-10);
+    background-color: var(--c-theme-10);
   }
   
-.fullWidth {
-width: 100% !important;
-}
+  .fullWidth {
+    width: 100% !important;
+  }
+  
+  .iconButton {
+    padding: 8px;
+  
+  
+  }
