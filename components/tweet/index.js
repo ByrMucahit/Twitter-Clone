@@ -25,23 +25,26 @@ function Tweet({name, slug, datetime, text}){
 
             <footer className={styles.footer}>
                 <div className={styles.footerButton}>
+                    {/* Reply */}
                     <IconButton>
                         <Icon.Reply />
                     </IconButton>
                 </div>
-
+                    {/* Retweet*/ }
                 <div className={styles.footerButton}>
                     <IconButton>
                         <Icon.Retweet />
                     </IconButton>
                 </div>
 
+                
+                {/* Like */}
                 <div className={styles.footerButton}>
                     <IconButton>
                         <Icon.Like />
                     </IconButton>
                 </div>
-
+                {/* share  */}
                 <div className={styles.footerButton}>
                     <IconButton>
                         <Icon.Share />
