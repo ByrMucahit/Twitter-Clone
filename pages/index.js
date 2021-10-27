@@ -1,33 +1,31 @@
 import React from 'react'
+import useSWR from 'swr'
 
+import styles from './index.module.css'
 
 import Layout from '../components/layout'
+import Loading from '../components/loading'
 import Tweet from '../components/tweet'
+
+import fetcher from '../lib/fetch'
 
 
 function HomePage() {
+    
+    const { data } = useSWR('/api/tweet', fetcher)
+
+   
     return (
         <Layout>
-            <Tweet 
-            name="Mucahit BAYAR" 
-            slug='Mucahit BAYAR' 
-            datetime={new Date("2021-10-20")}
-            text= {`postcss özelinde video çektim ama içinde yok yok :)) 
-                
-babel, ast, sass, ...`
+            {!data && 
+            <div className={styles.loading}>
+                <Loading/>
+            </div>
             }
-            />
-             <Tweet 
-            name="Mucahit BAYAR" 
-            slug='Mucahit BAYAR' 
-            datetime={new Date("2021-10-20")}
-            text= {`KPSS'de 88 puan alan bir kişinin sözlü mülakatta "sıfır" puan alması hayatın olağan akışına aykırıdır. 
-
-            Danıştay 12. Daire
-            2020/1928 E.  2020/3137 K.`
-            }
-            />
-               
+            {data?.statuses.map((tweet)=> {
+                return <Tweet key={tweet.id} {...tweet}/>
+            }) }
+            
         </Layout>
     )
   }

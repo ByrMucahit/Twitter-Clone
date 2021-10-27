@@ -49,6 +49,7 @@
     "postcss-nested": "^5.0.6",
     "prettier": "^2.4.1",
     "style-loader": "^2.0.0",
-    "stylelint-config-recommended": "^5.0.0"
+    "stylelint-config-recommended": "^5.0.0",
+    "swr": "^1.0.1"
   }
 }
